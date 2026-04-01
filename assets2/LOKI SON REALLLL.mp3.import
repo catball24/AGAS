@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dnl61b0d0s4nd"
+path="res://.godot/imported/LOKI SON REALLLL.mp3-3835ac40d53b966293feab5bfe7724ca.mp3str"
+
+[deps]
+
+source_file="res://assets/LOKI SON REALLLL.mp3"
+dest_files=["res://.godot/imported/LOKI SON REALLLL.mp3-3835ac40d53b966293feab5bfe7724ca.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

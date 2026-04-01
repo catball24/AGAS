@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://b0krvfwm7aamh"
+path="res://.godot/imported/ODIN FIXED.mp3-73e85a6adc3f118817c5ccb6cd5ba2fa.mp3str"
+
+[deps]
+
+source_file="res://assets/ODIN FIXED.mp3"
+dest_files=["res://.godot/imported/ODIN FIXED.mp3-73e85a6adc3f118817c5ccb6cd5ba2fa.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
