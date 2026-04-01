@@ -1,0 +1,36 @@
+[gd_scene format=3 uid="uid://didpllfunwg00"]
+
+[ext_resource type="Script" uid="uid://2tck220s10fv" path="res://scripts/rock.gd" id="1_1g4hq"]
+[ext_resource type="Texture2D" uid="uid://bgkx55jp6t8ol" path="res://assets/Untitled_Artwork (5).png" id="2_y1kmo"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_md0e3"]
+radius = 28.5
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_4ra3w"]
+radius = 33.305405
+
+[node name="rock" type="CharacterBody2D" unique_id=1293445663]
+scale = Vector2(3.685, 3.685)
+collision_layer = 8
+collision_mask = 0
+script = ExtResource("1_1g4hq")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1966457709]
+texture_filter = 1
+position = Vector2(0.6799998, 0.598238)
+scale = Vector2(0.112156846, 0.11215686)
+texture = ExtResource("2_y1kmo")
+region_rect = Rect2(-100.54834, 46.720886, 1241.5303, 788.95276)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1521150595]
+shape = SubResource("CircleShape2D_md0e3")
+
+[node name="hitbox" type="Area2D" parent="." unique_id=139179253]
+collision_layer = 16
+collision_mask = 38
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="hitbox" unique_id=811376688]
+texture_filter = 1
+shape = SubResource("CircleShape2D_4ra3w")
+
+[connection signal="body_entered" from="hitbox" to="." method="_on_hitbox_body_entered"]

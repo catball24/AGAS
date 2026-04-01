@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://b57m1ekj622bs"]
+
+[ext_resource type="Script" uid="uid://bc8oetsi3fpag" path="res://scripts/jormanundrbody_l.gd" id="1_j5mfv"]
+[ext_resource type="Texture2D" uid="uid://bnd76xorjafmo" path="res://assets/Untitled_Artwork (4).png" id="2_j5mfv"]
+
+[node name="jormanundrbodyR" type="CharacterBody2D" unique_id=133150445]
+scale = Vector2(2.59, 2.59)
+collision_layer = 25
+collision_mask = 6
+script = ExtResource("1_j5mfv")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=4745994]
+texture = ExtResource("2_j5mfv")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=1287230856]
+polygon = PackedVector2Array(-1344, -55, -1168, -31, -812, -26, -473, 0, 991, 15, 1050, 54, 1090, 103, 1122, 176, 1150, 189, 1174, 152, 1142, 43, 1195, -60, 1264, -60, 1280, -39, 1303, -48, 1322, -114, 1334, -137, 1336, -168, 1311, -189, 1268, -184, 1000, -117, -702, -121, -1140, -98)

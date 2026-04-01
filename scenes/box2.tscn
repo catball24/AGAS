@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://cs5vruh1plxkl"]
+
+[ext_resource type="Texture2D" uid="uid://bf1wj0872upgq" path="res://assets/Untitled_Artwork (9).png" id="1_gkaix"]
+
+[node name="box" type="StaticBody2D" unique_id=496432985]
+texture_filter = 1
+position = Vector2(3, 3)
+collision_mask = 2
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=2087899402]
+position = Vector2(-85, 54)
+polygon = PackedVector2Array(80, 22, 158, 2, 156, -109, 78, -131, 1, -107, 0, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=444026324]
+position = Vector2(-3, -24)
+scale = Vector2(0.387, 0.407)
+texture = ExtResource("1_gkaix")
+region_rect = Rect2(0, 284, 156.5, 149)

@@ -1,0 +1,53 @@
+[gd_scene format=3 uid="uid://da55fkg4wyxo2"]
+
+[ext_resource type="Texture2D" uid="uid://dffwljf86yrnl" path="res://assets/output-onlinegiftools.png" id="1_6vx2y"]
+
+[sub_resource type="Animation" id="Animation_skg6e"]
+resource_name = "L2S"
+length = 7.714286
+loop_mode = 2
+step = 0.14
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("l2s:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.7171428, 1.8571427, 1.9971428, 2.1371427, 2.2771428, 2.4171429, 2.5571427, 2.6971428, 2.837143, 2.9771428, 3.1171427, 3.2571428, 3.397143, 3.5371428, 3.6771429, 3.8171427, 3.9571428, 4.0971427, 4.2371426, 4.377143, 4.517143, 4.6571426, 4.797143, 4.937143, 5.0771427, 5.2171426, 5.357143, 5.497143, 5.6371427, 7.285714),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [8, 10, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38]
+}
+
+[sub_resource type="Animation" id="Animation_2rlaf"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("l2s:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_aqt78"]
+_data = {
+&"L2S": SubResource("Animation_skg6e"),
+&"RESET": SubResource("Animation_2rlaf")
+}
+
+[node name="l2s" type="Sprite2D" unique_id=1279339149]
+texture = ExtResource("1_6vx2y")
+hframes = 10
+vframes = 9
+region_rect = Rect2(149, 67, 554, 752)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1546894751]
+root_node = NodePath("../..")
+libraries/ = SubResource("AnimationLibrary_aqt78")
+autoplay = &"L2S"

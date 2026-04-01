@@ -1,0 +1,46 @@
+[gd_scene format=3 uid="uid://bxg6ctq3fujkf"]
+
+[ext_resource type="Script" uid="uid://cl344xnpcdpxl" path="res://scripts/enemy.gd" id="1_7p1mj"]
+[ext_resource type="Texture2D" uid="uid://ccn7yckmrgdkw" path="res://assets/image-removebg-preview.png" id="2_md0e3"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_md0e3"]
+radius = 22.090721
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_4ra3w"]
+radius = 27.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_5uy6h"]
+radius = 6271.032
+
+[node name="odintracker" type="CharacterBody2D" unique_id=1293445663]
+scale = Vector2(2, 2)
+collision_layer = 8
+collision_mask = 10
+script = ExtResource("1_7p1mj")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1966457709]
+texture_filter = 1
+texture = ExtResource("2_md0e3")
+region_enabled = true
+region_rect = Rect2(448.09558, 47.309055, 56.312256, 58.890438)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1521150595]
+shape = SubResource("CircleShape2D_md0e3")
+
+[node name="hitbox" type="Area2D" parent="." unique_id=139179253]
+collision_layer = 16
+collision_mask = 38
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="hitbox" unique_id=811376688]
+texture_filter = 1
+shape = SubResource("CircleShape2D_4ra3w")
+
+[node name="pdet" type="Area2D" parent="." unique_id=382139748]
+collision_layer = 64
+collision_mask = 6
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="pdet" unique_id=1389700259]
+shape = SubResource("CircleShape2D_5uy6h")
+
+[connection signal="body_entered" from="hitbox" to="." method="_on_hitbox_body_entered"]
+[connection signal="body_entered" from="pdet" to="." method="_on_pdet_body_entered"]

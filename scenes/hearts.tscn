@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://cnyoodfskbbpy"]
+
+[ext_resource type="Script" uid="uid://djvqhu8ky8gf6" path="res://scripts/1hearts.gd" id="1_ruow3"]
+
+[node name="hearts" type="HBoxContainer" unique_id=1235689199]
+layout_direction = 2
+offset_right = 26.0
+offset_bottom = 14.020271
+scale = Vector2(5.92, 5.92)
+theme_override_constants/separation = 13
+script = ExtResource("1_ruow3")

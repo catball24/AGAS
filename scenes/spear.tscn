@@ -1,0 +1,67 @@
+[gd_scene format=3 uid="uid://bhihy2hie6nru"]
+
+[ext_resource type="Script" uid="uid://ca76e8fb1i7jp" path="res://scripts/spear.gd" id="1_uf2bl"]
+[ext_resource type="Texture2D" uid="uid://ccn7yckmrgdkw" path="res://assets/image-removebg-preview.png" id="2_efxkm"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_uf2bl"]
+size = Vector2(302, 26)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_efxkm"]
+size = Vector2(297, 20)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_5uy6h"]
+radius = 6271.032
+
+[node name="spear" type="CharacterBody2D" unique_id=1293445663]
+scale = Vector2(2.985, 2.985)
+collision_layer = 8
+collision_mask = 0
+script = ExtResource("1_uf2bl")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1966457709]
+texture_filter = 1
+rotation = 1.5707964
+texture = ExtResource("2_efxkm")
+region_enabled = true
+region_rect = Rect2(462.31165, 119.30327, 37.111877, 306.69672)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1521150595]
+shape = SubResource("RectangleShape2D_uf2bl")
+
+[node name="hitbox" type="Area2D" parent="." unique_id=139179253]
+collision_layer = 16
+collision_mask = 38
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="hitbox" unique_id=811376688]
+texture_filter = 1
+position = Vector2(-0.5, 0)
+shape = SubResource("RectangleShape2D_efxkm")
+
+[node name="pdet" type="Area2D" parent="." unique_id=382139748]
+collision_layer = 64
+collision_mask = 6
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="pdet" unique_id=1389700259]
+shape = SubResource("CircleShape2D_5uy6h")
+
+[node name="Timer" type="Timer" parent="." unique_id=1275236045]
+wait_time = 3.0
+autostart = true
+ignore_time_scale = true
+
+[node name="Timer2" type="Timer" parent="." unique_id=640772184]
+wait_time = 1.5
+one_shot = true
+ignore_time_scale = true
+
+[node name="Timer3" type="Timer" parent="." unique_id=1284740384]
+wait_time = 1.5
+one_shot = true
+autostart = true
+ignore_time_scale = true
+
+[connection signal="body_entered" from="hitbox" to="." method="_on_hitbox_body_entered"]
+[connection signal="body_entered" from="pdet" to="." method="_on_pdet_body_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="Timer2" to="." method="_on_timer_2_timeout"]
+[connection signal="timeout" from="Timer3" to="." method="_on_timer_3_timeout"]

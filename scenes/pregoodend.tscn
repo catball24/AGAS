@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://b5p3f5qrdwlbm"]
+
+[ext_resource type="Script" uid="uid://cv5dw6nklqgt0" path="res://scripts/pregoodend.gd" id="1_850xu"]
+[ext_resource type="VideoStream" uid="uid://dcgmte4shvyi" path="res://assets/ScreenRecording_03-30-2026 14-21-53_1 (1).ogv" id="1_lx3uq"]
+
+[node name="pregoodend" type="Control" unique_id=1067185302]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_850xu")
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="." unique_id=188546024]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.024
+anchor_bottom = 1.0
+offset_right = 0.3519287
+stream = ExtResource("1_lx3uq")
+autoplay = true
+
+[connection signal="finished" from="VideoStreamPlayer" to="." method="_on_video_stream_player_finished"]

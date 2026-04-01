@@ -1,0 +1,53 @@
+	{
+		"start": {
+			"text": "Good job",
+			"name": "Odin",
+			"mood": "neutral",
+			"next": "A"
+		},
+		"A": {
+			"text": "now there's just one more to put in",
+			"name": "Odin",
+			"mood": "angry",
+			"next": "B"
+		},
+		"B": {
+			"text": "Your son Jörmungandr",
+			"name": "Odin",
+			"mood": "mad",
+			"next": "C"
+		},
+		"C": {
+			"text": "Accept",
+			"name": "",
+			"mood": "",
+			"choices": {
+			"Yes" : "D",
+			"No": "O"
+			}
+		},
+		"D": {
+			"text": "Good",
+			"name": "Odin",
+			"mood": "neutral",
+			"next": "E"
+		},
+		"E": {
+			"text": "Go back through the hall",
+			"name": "Odin",
+			"mood": "neutral",
+			"next": "N"
+		},
+		"N": {
+			"trigger": "ENDCODE"
+		},
+		"O": {
+			"text": "WHY YOU LITTLE!",
+			"name": "Odin",
+			"mood": "angry",
+			"next": "P"
+		},
+		"P": {
+			"trigger": "ODINFIGHT"
+		}
+		}

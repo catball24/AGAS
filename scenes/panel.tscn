@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://bpi306mmx43vc"]
+
+[ext_resource type="Script" uid="uid://legyma7sxtl0" path="res://scripts/heart.gd" id="1_ixbsq"]
+[ext_resource type="Texture2D" uid="uid://bvyc5v4klldww" path="res://assets/output-onlinegiftools (1).png" id="1_y26ic"]
+
+[node name="Panel" type="Panel" unique_id=1713625340]
+self_modulate = Color(1, 1, 1, 0)
+offset_right = 12.0
+offset_bottom = 8.0
+script = ExtResource("1_ixbsq")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=879231350]
+position = Vector2(-4, -2.0000002)
+scale = Vector2(0.107142866, 0.10714286)
+texture = ExtResource("1_y26ic")
+centered = false
+hframes = 6
+vframes = 2

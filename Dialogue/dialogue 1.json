@@ -1,0 +1,100 @@
+	{
+		"start": {
+			"text": "Loki sometimes your pranks are funny",
+			"name": "Odin",
+			"mood": "neutral",
+			"next": "A"
+		},
+		"A": {
+			"text": "BUT THAT WAS TOO FAR!",
+			"name": "Odin",
+			"mood": "angry",
+			"next": "B"
+		},
+		"B": {
+			"text": "Now we have to cleanup Baldr from the hall of Glaðsheimr",
+			"name": "Odin",
+			"mood": "mad",
+			"next": "C"
+		},
+		"C": {
+			"text": "But,",
+			"name": "Odin",
+			"mood": "neutral",
+			"next": "D"
+		},
+		"D": {
+			"text": "Because of that",
+			"name": "Odin",
+			"mood": "neutral",
+			"next": "E"
+		},
+		"E": {
+			"text": "You need to do me a little favor",
+			"name": "Odin",
+			"mood": "neutral",
+			"next": "F"
+		},
+		"F": {
+			"text": "Or",
+			"name": "Odin",
+			"mood": "neutral",
+			"next": "G"
+		},
+		"G": {
+			"text": "YOU ARE NEVER COMING BACK!",
+			"name": "Odin",
+			"mood": "angry",
+			"next": "H"
+		},
+		"H": {
+			"text": "You must go and defeat Jörmungandr",
+			"name": "Odin",
+			"mood": "neutral",
+			"next": "I"
+		},
+		"I": {
+			"text": "And put him in this box",
+			"name": "Odin",
+			"mood": "neutral",
+			"next": "J"
+		},
+		"J": {
+			"text": "So,",
+			"name": "Odin",
+			"mood": "neutral",
+			"next": "K"
+		},
+		"K": {
+			"text": "Do we have a deal?",
+			"name": "Odin",
+			"mood": "neutral",
+			"choices": {
+			"Yes" : "L",
+			"No": "O"
+		}},
+		"L": {
+			"text": "Good",
+			"name": "Odin",
+			"mood": "neutral",
+			"next": "M"
+		},
+		"M": {
+			"text": "Now go through that hall",
+			"name": "Odin",
+			"mood": "neutral",
+			"next": "N"
+		},
+		"N": {
+			"trigger": "ENDCODE"
+		},
+		"O": {
+			"text": "WHY YOU LITTLE!",
+			"name": "Odin",
+			"mood": "angry",
+			"next": "P"
+		},
+		"P": {
+			"trigger": "ODINFIGHT"
+		}
+		}

@@ -1,0 +1,54 @@
+[gd_scene format=3 uid="uid://d1g67rlklsb5n"]
+
+[ext_resource type="Script" uid="uid://vi1dva6gmrx0" path="res://scripts/badend.gd" id="1_df1k8"]
+[ext_resource type="Texture2D" uid="uid://ctq8j445jgu4i" path="res://assets/Untitled_Artwork (11).png" id="2_sgxn4"]
+[ext_resource type="FontFile" uid="uid://dv6xvqpbpxsj1" path="res://assets/kirifont/KiriFont.ttf" id="3_rxxve"]
+[ext_resource type="PackedScene" uid="uid://cisg34vhgt1p" path="res://scenes/fade.tscn" id="4_43e0i"]
+
+[node name="Badend1" type="Node2D" unique_id=635467510]
+script = ExtResource("1_df1k8")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=280637855]
+offset_right = 1150.2222
+offset_bottom = 647.0
+texture = ExtResource("2_sgxn4")
+expand_mode = 1
+
+[node name="Control" type="Control" parent="." unique_id=626619474]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1152.0
+offset_bottom = 649.0
+
+[node name="Button" type="Button" parent="Control" unique_id=703592446]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -215.0
+offset_top = -113.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(0.45840502, 0.45840508, 0.45840502, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 20
+theme_override_fonts/font = ExtResource("3_rxxve")
+theme_override_font_sizes/font_size = 65
+text = "Retry"
+flat = true
+
+[node name="fade" parent="." unique_id=880440457 instance=ExtResource("4_43e0i")]
+visible = false
+offset_left = -67.0
+offset_top = -55.0
+offset_right = 1203.0
+offset_bottom = 706.0
+
+[node name="fadeTimer" type="Timer" parent="fade" unique_id=1972062529]
+
+[connection signal="pressed" from="Control/Button" to="." method="_on_button_pressed"]
+[connection signal="timeout" from="fade/fadeTimer" to="." method="_on_fade_timer_timeout"]

@@ -1,0 +1,79 @@
+[gd_scene format=3 uid="uid://b6wb1beu17hh5"]
+
+[ext_resource type="Script" uid="uid://d11cudpwe6q5n" path="res://scripts/odinfight.gd" id="1_c7qtm"]
+[ext_resource type="Texture2D" uid="uid://dndeqdrrfulni" path="res://assets/Untitled_Artwork (3).png" id="2_hg33s"]
+[ext_resource type="AudioStream" uid="uid://c1f2pbns5csvf" path="res://assets/odin.mp3" id="2_nr3xo"]
+[ext_resource type="Texture2D" uid="uid://da4ua5670563n" path="res://assets/IMG_1957.png" id="3_6omjb"]
+[ext_resource type="PackedScene" uid="uid://bkbxohlg7rsoe" path="res://scenes/player.tscn" id="4_inc0l"]
+[ext_resource type="PackedScene" uid="uid://cnyoodfskbbpy" path="res://scenes/hearts.tscn" id="6_hg33s"]
+
+[node name="Odinfight" type="Node2D" unique_id=927753212]
+script = ExtResource("1_c7qtm")
+metadata/_edit_lock_ = true
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1991991355]
+collision_mask = 255
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="StaticBody2D" unique_id=903431221]
+position = Vector2(937.05383, 988.1394)
+polygon = PackedVector2Array(-1763.0538, -1630.1394, -1772.0538, 186.8606, 1302.9462, 182.8606, 1168.9462, -1584.1394, -1579.0538, -1588.1394, -1491.0538, -1383.1394, -1145.0538, -1250.1394, -935.05383, -1483.1394, -642.05383, -1481.1394, -466.05383, -1402.1394, -240.05383, -1488.1394, 134.94617, -1365.1394, 529.94617, -1476.1394, 593.94617, -1428.1394, 1004.94617, -1427.1394, 834.94617, -1311.1394, 995.94617, -1102.1394, 877.94617, -838.1394, 964.94617, -789.1394, 1026.9462, -662.1394, 914.94617, -622.1394, 1034.9462, -388.1394, 926.94617, -292.1394, 1038.9462, -153.1394, 960.94617, -122.139404, 837.94617, -5.1394043, 596.94617, -28.139404, 485.94617, -30.139404, 383.94617, -10.139404, 26.946167, 1.8605957, -38.053833, 2.8605957, -242.05383, -20.139404, -386.05383, -43.139404, -506.05383, -54.139404, -644.05383, -37.139404, -850.05383, 7.8605957, -939.05383, -138.1394, -1032.0538, 3.8605957, -1224.0538, -75.139404, -1510.0538, -14.139404, -1367.0538, -135.1394, -1654.0538, -354.1394, -1591.0538, -410.1394, -1656.0538, -462.1394, -1480.0538, -752.1394, -1549.0538, -806.1394, -1485.0538, -1019.1394, -1590.0538, -1135.1394, -1494.0538, -1377.1394, -1548.0538, -1622.1394)
+
+[node name="UntitledArtwork(3)" type="Sprite2D" parent="." unique_id=422265126]
+position = Vector2(616, 264.12494)
+scale = Vector2(1.281173, 1.0001543)
+texture = ExtResource("2_hg33s")
+
+[node name="Img1957" type="Sprite2D" parent="." unique_id=332546233]
+position = Vector2(581.49994, 251.49992)
+scale = Vector2(1.3162037, 0.978395)
+texture = ExtResource("3_6omjb")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=75384139]
+stream = ExtResource("2_nr3xo")
+volume_db = -21.894
+autoplay = true
+
+[node name="player" parent="." unique_id=2092287744 instance=ExtResource("4_inc0l")]
+position = Vector2(630, 254)
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1199690382]
+position = Vector2(617, 254)
+zoom = Vector2(0.425, 0.425)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=2098441167]
+
+[node name="hearts" parent="CanvasLayer" unique_id=1235689199 instance=ExtResource("6_hg33s")]
+metadata/_edit_use_anchors_ = true
+
+[node name="tracker" type="Timer" parent="." unique_id=278614490]
+wait_time = 8.0
+one_shot = true
+
+[node name="spear" type="Timer" parent="." unique_id=1143470009]
+wait_time = 15.0
+one_shot = true
+
+[node name="skeletons" type="Timer" parent="." unique_id=489683701]
+wait_time = 5.0
+one_shot = true
+
+[node name="charge" type="Timer" parent="." unique_id=782497189]
+wait_time = 9.0
+one_shot = true
+
+[node name="fight" type="Timer" parent="." unique_id=897973508]
+wait_time = 300.0
+autostart = true
+
+[node name="phase 2" type="Timer" parent="." unique_id=173574355]
+wait_time = 150.0
+one_shot = true
+autostart = true
+
+[connection signal="finished" from="AudioStreamPlayer" to="." method="_on_audio_stream_player_finished"]
+[connection signal="timeout" from="tracker" to="." method="_on_tracker_timeout"]
+[connection signal="timeout" from="spear" to="." method="_on_spear_timeout"]
+[connection signal="timeout" from="skeletons" to="." method="_on_skeletons_timeout"]
+[connection signal="timeout" from="charge" to="." method="_on_charge_timeout"]
+[connection signal="timeout" from="fight" to="." method="_on_fight_timeout"]
+[connection signal="timeout" from="phase 2" to="." method="_on_phase_2_timeout"]

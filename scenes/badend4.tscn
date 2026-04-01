@@ -1,0 +1,54 @@
+[gd_scene format=3 uid="uid://bt1cd2l3eby4s"]
+
+[ext_resource type="Script" uid="uid://cfq8b0dq02vdr" path="res://scripts/badend_4.gd" id="1_l0tlk"]
+[ext_resource type="Texture2D" uid="uid://ctq8j445jgu4i" path="res://assets/Untitled_Artwork (11).png" id="2_q6tmp"]
+[ext_resource type="PackedScene" uid="uid://cisg34vhgt1p" path="res://scenes/fade.tscn" id="3_0xvp8"]
+[ext_resource type="FontFile" uid="uid://dv6xvqpbpxsj1" path="res://assets/kirifont/KiriFont.ttf" id="4_bg23i"]
+
+[node name="Badend" type="Node2D" unique_id=635467510]
+script = ExtResource("1_l0tlk")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1091722054]
+offset_right = 1150.2222
+offset_bottom = 647.0
+texture = ExtResource("2_q6tmp")
+expand_mode = 1
+
+[node name="fade" parent="." unique_id=880440457 instance=ExtResource("3_0xvp8")]
+visible = false
+offset_left = -67.0
+offset_top = -55.0
+offset_right = 1203.0
+offset_bottom = 706.0
+
+[node name="fadeTimer" type="Timer" parent="fade" unique_id=974064212]
+
+[node name="Control" type="Control" parent="." unique_id=1181609538]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1152.0
+offset_bottom = 649.0
+
+[node name="Button" type="Button" parent="Control" unique_id=656746436]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -215.0
+offset_top = -113.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(0.45840502, 0.45840508, 0.45840502, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 20
+theme_override_fonts/font = ExtResource("4_bg23i")
+theme_override_font_sizes/font_size = 65
+text = "Back"
+flat = true
+
+[connection signal="timeout" from="fade/fadeTimer" to="." method="_on_fade_timer_timeout"]
+[connection signal="pressed" from="Control/Button" to="." method="_on_button_pressed"]

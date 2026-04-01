@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://c2d4e1npekxav"]
+
+[ext_resource type="Texture2D" uid="uid://ccn7yckmrgdkw" path="res://assets/image-removebg-preview.png" id="1_3inec"]
+
+[node name="box" type="StaticBody2D" unique_id=496432985]
+texture_filter = 1
+position = Vector2(3, 3)
+collision_mask = 2
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=2087899402]
+position = Vector2(-85, 54)
+polygon = PackedVector2Array(80, 22, 158, 2, 156, -109, 78, -131, 1, -107, 0, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=444026324]
+position = Vector2(-3, -24)
+scale = Vector2(1.4423076, 1.5167785)
+texture = ExtResource("1_3inec")
+region_enabled = true
+region_rect = Rect2(0, 284, 156.5, 149)

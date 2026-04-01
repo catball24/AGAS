@@ -1,0 +1,104 @@
+[gd_scene format=3 uid="uid://bte8atisaa6sq"]
+
+[ext_resource type="Script" uid="uid://bmki5ptsx7gu5" path="res://scripts/title.gd" id="1_wosw1"]
+[ext_resource type="Texture2D" uid="uid://emafnxonlh7d" path="res://assets/IMG_1949.png" id="2_b3w7a"]
+[ext_resource type="FontFile" uid="uid://dv6xvqpbpxsj1" path="res://assets/kirifont/KiriFont.ttf" id="2_p6dhs"]
+[ext_resource type="PackedScene" uid="uid://da55fkg4wyxo2" path="res://scenes/l_2s.tscn" id="2_pyl7j"]
+[ext_resource type="PackedScene" uid="uid://cisg34vhgt1p" path="res://scenes/fade.tscn" id="3_p6dhs"]
+[ext_resource type="AudioStream" uid="uid://cfq4p1mu4gcvs" path="res://assets/INTRO.mp3" id="6_4rr2b"]
+
+[node name="title" type="Node2D" unique_id=872334591]
+script = ExtResource("1_wosw1")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1572972981]
+offset_left = -2.0
+offset_top = -9.0
+offset_right = 2158.0
+offset_bottom = 1611.0
+scale = Vector2(0.5500174, 0.40000057)
+texture = ExtResource("2_b3w7a")
+
+[node name="Label" type="Label" parent="." unique_id=220935769]
+offset_left = 117.0
+offset_top = 81.0
+offset_right = 1082.0
+offset_bottom = 147.0
+theme_override_fonts/font = ExtResource("2_p6dhs")
+theme_override_font_sizes/font_size = 66
+text = "A God Among Sharks"
+autowrap_mode = 2
+
+[node name="l2s" parent="." unique_id=1279339149 instance=ExtResource("2_pyl7j")]
+position = Vector2(946.00006, 445)
+scale = Vector2(0.56472075, 0.5647207)
+
+[node name="Control" type="Control" parent="." unique_id=1892679235]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 574.0
+offset_top = 315.0
+offset_right = 614.0
+offset_bottom = 355.0
+metadata/_edit_use_anchors_ = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control" unique_id=1357108077]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -153.0
+offset_top = -106.0
+offset_right = 153.0
+offset_bottom = 106.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="Camera2D" type="Camera2D" parent="Control/VBoxContainer" unique_id=1424411989]
+position = Vector2(133, 86)
+
+[node name="start" type="Button" parent="Control/VBoxContainer" unique_id=1976500417]
+layout_mode = 2
+theme_override_colors/font_hover_color = Color(0.48975354, 0.5855535, 0.8327692, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.49019608, 0.58431375, 0.83137256, 1)
+theme_override_fonts/font = ExtResource("2_p6dhs")
+theme_override_font_sizes/font_size = 60
+text = "Start"
+flat = true
+
+[node name="credits" type="Button" parent="Control/VBoxContainer" unique_id=1050943605]
+layout_mode = 2
+theme_override_colors/font_hover_color = Color(0.49019608, 0.58431375, 0.83137256, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.49019608, 0.58431375, 0.83137256, 1)
+theme_override_fonts/font = ExtResource("2_p6dhs")
+theme_override_font_sizes/font_size = 60
+text = "Credits"
+flat = true
+
+[node name="quit" type="Button" parent="Control/VBoxContainer" unique_id=715298274]
+layout_mode = 2
+theme_override_colors/font_hover_color = Color(0.49019608, 0.58431375, 0.83137256, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.49019608, 0.58431375, 0.83137256, 1)
+theme_override_fonts/font = ExtResource("2_p6dhs")
+theme_override_font_sizes/font_size = 60
+text = "Quit"
+flat = true
+
+[node name="fade" parent="." unique_id=880440457 instance=ExtResource("3_p6dhs")]
+offset_left = -67.0
+offset_top = -55.0
+offset_right = 1203.0
+offset_bottom = 706.0
+
+[node name="fadeTimer" type="Timer" parent="fade" unique_id=42658172]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1799971135]
+stream = ExtResource("6_4rr2b")
+volume_db = -32.8
+
+[connection signal="pressed" from="Control/VBoxContainer/start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="Control/VBoxContainer/credits" to="." method="_on_credits_pressed"]
+[connection signal="pressed" from="Control/VBoxContainer/quit" to="." method="_on_quit_pressed"]
+[connection signal="timeout" from="fade/fadeTimer" to="." method="_on_fade_timer_timeout"]

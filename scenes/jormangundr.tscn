@@ -1,0 +1,111 @@
+[gd_scene format=3 uid="uid://tv67qpcipx7c"]
+
+[ext_resource type="Script" uid="uid://b3kihswj2ph70" path="res://scripts/jormangundrfight.gd" id="1_locve"]
+[ext_resource type="Texture2D" uid="uid://dndeqdrrfulni" path="res://assets/Untitled_Artwork (3).png" id="2_t2jvs"]
+[ext_resource type="AudioStream" uid="uid://dnl61b0d0s4nd" path="res://assets/LOKI SON REALLLL.mp3" id="3_t2jvs"]
+[ext_resource type="PackedScene" uid="uid://bkbxohlg7rsoe" path="res://scenes/player.tscn" id="4_vbi03"]
+[ext_resource type="PackedScene" uid="uid://cnyoodfskbbpy" path="res://scenes/hearts.tscn" id="5_7dmbc"]
+[ext_resource type="PackedScene" uid="uid://caopesmms8b53" path="res://scenes/jormanundrbodytop.tscn" id="6_locve"]
+[ext_resource type="PackedScene" uid="uid://fouxcvd5qut1" path="res://scenes/jormanundrbodysides.tscn" id="7_t2jvs"]
+
+[sub_resource type="GDScript" id="GDScript_t2jvs"]
+script/source = "class_name CameraShake extends Camera2D
+func shake_camera(duration: float, strength: float) -> void:
+	var originalpos: Vector2 = global_position
+	var shakestart: float = Time.get_ticks_msec() / 1000
+	
+	
+	while (Time.get_ticks_msec() / 1000):
+		var x: float = randf_range(-strength,strength)
+		var y: float = randf_range(-strength,strength)
+		global_position = Vector2(x,y) + originalpos
+		await  get_tree().process_frame
+	
+	
+	global_position = originalpos
+"
+
+[node name="Jormangundrfight" type="Node2D" unique_id=927753212]
+script = ExtResource("1_locve")
+metadata/_edit_lock_ = true
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1991991355]
+collision_mask = 255
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D" unique_id=1690064249]
+polygon = PackedVector2Array(-751, -537, -762, 1060, 1988, 1056, 1988, -538, -749, -526, -743, -654, 2258, -745, 2198, 1172, -831, 1210, -824, -642)
+
+[node name="UntitledArtwork(3)" type="Sprite2D" parent="." unique_id=422265126]
+position = Vector2(616, 264.12494)
+scale = Vector2(1.281173, 1.0001543)
+texture = ExtResource("2_t2jvs")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=75384139]
+stream = ExtResource("3_t2jvs")
+volume_db = -24.291
+autoplay = true
+
+[node name="player" parent="." unique_id=2092287744 instance=ExtResource("4_vbi03")]
+position = Vector2(597, 262)
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1199690382]
+position = Vector2(617, 254)
+zoom = Vector2(0.425, 0.425)
+script = SubResource("GDScript_t2jvs")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=2098441167]
+
+[node name="hearts" parent="CanvasLayer" unique_id=1235689199 instance=ExtResource("5_7dmbc")]
+metadata/_edit_use_anchors_ = true
+
+[node name="jormanundrbodytop" parent="." unique_id=133150445 instance=ExtResource("6_locve")]
+position = Vector2(-633, -495)
+scale = Vector2(2.253, 2.253)
+
+[node name="jormanundrbodytop2" parent="." unique_id=104230930 instance=ExtResource("6_locve")]
+position = Vector2(1888.9998, 1022.9999)
+rotation = 3.1415927
+scale = Vector2(2.253, 2.253)
+
+[node name="jormanundrbodytop3" parent="." unique_id=56235617 instance=ExtResource("7_t2jvs")]
+position = Vector2(-1363, -1171)
+rotation = 0.12391838
+scale = Vector2(3.043, 3.043)
+
+[node name="jormanundrbodytop4" parent="." unique_id=543283626 instance=ExtResource("7_t2jvs")]
+position = Vector2(2598, 1866)
+rotation = 3.265511
+scale = Vector2(3.043, 3.043)
+
+[node name="rushtim" type="Timer" parent="." unique_id=578418734]
+wait_time = 30.0
+one_shot = true
+
+[node name="slitherio" type="Timer" parent="." unique_id=1870121667]
+wait_time = 22.0
+one_shot = true
+
+[node name="rock" type="Timer" parent="." unique_id=1319157880]
+wait_time = 5.0
+one_shot = true
+
+[node name="startrush" type="Timer" parent="." unique_id=730369276]
+wait_time = 5.0
+one_shot = true
+
+[node name="midrush" type="Timer" parent="." unique_id=1316340396]
+wait_time = 5.0
+one_shot = true
+
+[node name="Timer" type="Timer" parent="." unique_id=1374329367]
+wait_time = 5.0
+one_shot = true
+autostart = true
+
+[connection signal="finished" from="AudioStreamPlayer" to="." method="_on_audio_stream_player_finished"]
+[connection signal="timeout" from="rushtim" to="." method="_on_rushtim_timeout"]
+[connection signal="timeout" from="slitherio" to="." method="_on_slitherio_timeout"]
+[connection signal="timeout" from="rock" to="." method="_on_rock_timeout"]
+[connection signal="timeout" from="startrush" to="." method="_on_startrush_timeout"]
+[connection signal="timeout" from="midrush" to="." method="_on_midrush_timeout"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

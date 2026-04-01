@@ -1,0 +1,108 @@
+[gd_scene format=3 uid="uid://2vedtavhh75j"]
+
+[ext_resource type="FontFile" uid="uid://dv6xvqpbpxsj1" path="res://assets/kirifont/KiriFont.ttf" id="1_0bpdh"]
+[ext_resource type="Script" uid="uid://cvufh1cqc8kiu" path="res://scripts/credits.gd" id="2_2ckv8"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_2ckv8"]
+
+[node name="credits" type="Node2D" unique_id=213567031]
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="." unique_id=1860988874]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(-234.49982, -197.99994)
+scale = Vector2(11597, 7566.001)
+mesh = SubResource("QuadMesh_2ckv8")
+metadata/_edit_lock_ = true
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1470024189]
+
+[node name="Label" type="Label" parent="." unique_id=629947816]
+offset_left = -570.0
+offset_top = 360.0
+offset_right = 578.0
+offset_bottom = 4569.0
+theme_override_fonts/font = ExtResource("1_0bpdh")
+theme_override_font_sizes/font_size = 50
+text = "These are the credits
+
+
+
+
+
+If you are reading this you have defeated your father
+
+
+
+
+
+You and your son are free
+
+
+
+
+
+Thanks for playing
+
+
+
+
+
+Animation
+Catball24
+
+
+Art
+Catball24
+
+
+Cover art
+Alex Kenyon
+
+
+Bad Ending Art
+Alex Kenyon
+
+
+
+Programing
+Catball24
+
+
+Dialogue
+Catball24
+
+
+Music composer
+Fredlobter
+
+
+Video actors
+Catball24
+Fredlobter
+
+
+Video script writers
+Catball24
+Fredlobter
+
+
+Video editor
+Fredlobter
+
+
+Bad Idea from the minds of
+Catball24
+Fredlobter
+
+
+Special thanks to
+Emma
+Fredlobter
+Rachel Ray
+Alex Kenyon
+Finn
+Mack Band"
+horizontal_alignment = 1
+autowrap_mode = 2
+script = ExtResource("2_2ckv8")
+metadata/_edit_use_anchors_ = true

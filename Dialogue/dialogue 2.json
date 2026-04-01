@@ -1,0 +1,89 @@
+	{
+		"start": {
+			"text": "Good job Loki!",
+			"name": "Odin",
+			"mood": "neutral",
+			"next": "A"
+		},
+		"A": {
+			"text": "Now you are free to go",
+			"name": "Odin",
+			"mood": "happy",
+			"choices": {
+			"Yes" : "N",
+			"No": "C"
+		}
+		},
+		"C": {
+			"text": "What do you mean",
+			"name": "Odin",
+			"mood": "neutral",
+			"next": "D"
+		},
+		"D": {
+			"text": "“No”",
+			"name": "Odin",
+			"mood": "neutral",
+			"next": "E"
+		},
+		"E": {
+			"text": "I mean no",
+			"name": "Loki",
+			"mood": "lokin",
+			"next": "F"
+		},
+		"F": {
+			"text": "Screw you",
+			"name": "Loki",
+			"mood": "lokim",
+			"next": "G"
+		},
+		"G": {
+			"text": "I'm not leaving without my son",
+			"name": "Loki",
+			"mood": "lokin",
+			"next": "H"
+		},
+		"H": {
+			"text": "Well too bad",
+			"name": "Odin",
+			"mood": "neutral",
+			"next": "I"
+		},
+		"I": {
+			"text": "You put him in my box",
+			"name": "Odin",
+			"mood": "neutral",
+			"next": "J"
+		},
+		"J": {
+			"text": "He's mine now",
+			"name": "Odin",
+			"mood": "neutral",
+			"next": "L"
+		},
+		"L": {
+			"text": "I guess I'll have to take matters into my own fins",
+			"name": "Loki",
+			"mood": "neutral",
+			"next": "M"
+		},
+		"M": {
+			"text": "*Bites Odin*",
+			"name": "",
+			"mood": "",
+			"next": "O"
+		},
+		"N": {
+			"trigger": "BADEND2"
+		},
+		"O": {
+			"text": "WHY YOU LITTLE!",
+			"name": "Odin",
+			"mood": "angry",
+			"next": "P"
+		},
+		"P": {
+			"trigger": "ODINFIGHT"
+		}
+		}
